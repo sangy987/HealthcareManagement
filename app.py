@@ -2,12 +2,11 @@ from flask import Flask, Markup, render_template, flash, redirect, url_for, sess
 from flask_mysqldb import MySQL
 from wtforms import Form, IntegerField, StringField, TextAreaField, PasswordField, validators, SubmitField
 from wtforms.validators import DataRequired
-from passlib.hash import sha256_crypt
 from functools import wraps
 from wtforms.fields.html5 import DateField
 from datetime import date
 from flask_mail import Mail, Message
-#import smtplib
+
 import random
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
@@ -331,7 +330,6 @@ def hashcode(hashCode):
 	return render_template('reset.html', form = form)
 
 class ReportForm(Form):
-	#patient_name = StringField('Patient Username*', [validators.DataRequired(),validators.Length(min=4, max=25)])
 	data = StringField("Patient Data*", [validators.DataRequired()])
 
 @app.route('/reports/<username>', methods=['GET', 'POST'])
