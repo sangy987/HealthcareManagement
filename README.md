@@ -33,5 +33,4 @@ Dependencies of these two modules are shown below:
 * flask
 * flask_mysqldb 
 * wtforms 
-* functools 
 * flask_mail 
